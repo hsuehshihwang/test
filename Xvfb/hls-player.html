@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLS Stream Player</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+
+    <h2>Live HLS Stream</h2>
+
+    <label for="hls-url">Enter HLS Stream URL:</label>
+    <input type="text" id="hls-url" value="http://192.168.2.33:8080/hls/test.m3u8">
+    <button onclick="updateStream()">Switch Stream</button>
+
+    <video id="video" controls autoplay width="640" height="360"></video>
+
+    <script>
+        var video = document.getElementById('video');
+        var hls = null;
+        
+        function loadStream(url) {
+            if (hls) {
+                hls.destroy();  // Disconnect previous stream
+            }
+            if (Hls.isSupported()) {
+                hls = new Hls();
+                hls.loadSource(url);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                    video.play();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = url;
+                video.addEventListener('loadedmetadata', function() {
+                    video.play();
+                });
+            }
+        }
+
+        function updateStream() {
+            var newUrl = document.getElementById("hls-url").value;
+            loadStream(newUrl);
+        }
+
+        // Load the default stream on page load
+        window.onload = function() {
+            loadStream(document.getElementById("hls-url").value);
+        };
+    </script>
+
+</body>
+</html>
+

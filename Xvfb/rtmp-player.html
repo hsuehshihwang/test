@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTMP Stream Player</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.11.8/video.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.11.8/video-js.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <h2>Enter RTMP Server Address</h2>
+    <input type="text" id="rtmp-url" placeholder="rtmp://your-server/live/stream">
+    <button onclick="updateStream()">Play Stream</button>
+
+    <video id="streamPlayer" class="video-js vjs-default-skin" controls autoplay width="640" height="360">
+        <source id="rtmp-source" src="" type="rtmp/flv">
+    </video>
+
+    <script>
+        function updateStream() {
+            let rtmpUrl = document.getElementById("rtmp-url").value;
+            let videoElement = document.getElementById("streamPlayer");
+            let sourceElement = document.getElementById("rtmp-source");
+
+            if (rtmpUrl) {
+                sourceElement.src = rtmpUrl;
+                videoElement.load();
+                videoElement.play();
+            } else {
+                alert("Please enter a valid RTMP URL.");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
