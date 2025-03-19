@@ -1,4 +1,5 @@
 #!/bin/bash
-git add .
-git commit . -m update
+dir=${1:-\.}
+git add $dir
+git commit $dir -m update
 git push origin main
