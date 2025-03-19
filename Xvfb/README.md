@@ -10,6 +10,8 @@
 ./build.sh
 ./run.sh
 docker ps -a 
+CONTAINER ID   IMAGE             COMMAND            CREATED         STATUS         PORTS     NAMES
+e00a8c88f801   xvfb-nginx-rtmp   "/entrypoint.sh"   8 minutes ago   Up 8 minutes             xvfb-nginx-rtmp
 ```
 
 
