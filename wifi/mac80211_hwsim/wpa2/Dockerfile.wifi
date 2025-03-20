@@ -13,13 +13,6 @@ RUN apt update && apt install -y \
 # Enable dbus (needed for wpa_supplicant)
 RUN mkdir -p /var/run/dbus && chmod 755 /var/run/dbus
 
-# Copy the entrypoint script
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
 # Expose ports if needed (for DHCP, DNS, or external connections)
 EXPOSE 67/UDP 68/UDP 53/UDP 80/TCP
-
-# Set entrypoint
-# ENTRYPOINT ["/entrypoint.sh"]
 
