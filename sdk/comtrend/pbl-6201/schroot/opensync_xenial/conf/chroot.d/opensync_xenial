@@ -1,0 +1,25 @@
+# schroot chroot definitions.
+# See schroot.conf(5) for complete documentation of the file format.
+#
+# Please take note that you should not add untrusted users to
+# root-groups, because they will essentially have full root access
+# to your system.  They will only have root access inside the chroot,
+# but that's enough to cause malicious damage.
+#
+# The following lines are examples only.  Uncomment and alter them to
+# customise schroot for your needs, or create a new entry from scratch.
+#
+[opensync_xenial-test]
+description=OpenSync Xenial Environmnet
+aliases=opensync_xenial
+type=directory
+directory=/home/ralph/work/comtrend/schroot/opensync_xenial/rootdir
+users=ralph
+# groups=statushc
+root-users=ralph
+# root-groups=statushc
+profile=opensync
+personality=linux
+# preserve-environment=true
+# Mount /home/user/data from the host to /mnt/data inside the chroot
+# mount-entries=/home/ralph/share /home/ralph/share none rw,bind 0 0
