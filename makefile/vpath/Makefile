@@ -6,4 +6,4 @@ OBJS=1.o 3.o
 all: $(OBJS)
 
 %.o: %.c
-	@echo atrget=$@, input=$<
+	@echo target=$@, input=$<
