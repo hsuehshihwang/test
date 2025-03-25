@@ -1,0 +1,11 @@
+<map id="send_files" name="send_files">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,92,80"/>
+<area shape="rect" id="Node000002" href="$load__file_8c.html#ab0d54fcf9b592d3233bf42452fcab4c2" title=" " alt="" coords="140,55,220,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,65,126,65,126,70,92,70"/>
+<area shape="rect" id="Node000003" href="$cmd__send_8c.html#aebae2c913854258104ce6daf544baaef" title=" " alt="" coords="279,5,418,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="219,53,291,32,292,37,221,58"/>
+<area shape="rect" id="Node000004" href="$cmd__read_8c.html#a90cf526a4df50aa6491d888cef8e1c13" title=" " alt="" coords="305,55,392,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="220,65,292,65,292,70,220,70"/>
+<area shape="rect" id="Node000005" href="$tcp__cli__create__socket_8c.html#a006bd653b613d1907bb65abde1800c8a" title=" " alt="" coords="268,104,429,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="221,76,292,97,291,103,219,81"/>
+</map>
