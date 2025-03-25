@@ -2,7 +2,11 @@
 
 rm -rf Doxyfile* docs src
 mkdir -p src
-ln -sf ~/work/comtrend/sdk/Opensync_3.2_L07p2.remote_test/userspace/private/apps/mdm src/mdm
+BASE=~/work/comtrend/sdk/Opensync_3.2_L07p2.remote_test
+ln -sf ${BASE}/userspace
+ln -sf ${BASE}/userspace/private/apps/mdm src/
+ln -sf ${BASE}/userspace/private/libs/cms_core src/
+ln -sf ${BASE}/userspace/private/libs/cms_cli src/
 doxygen -g
 
 INPUT=./src
