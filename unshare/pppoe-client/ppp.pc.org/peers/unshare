@@ -1,0 +1,7 @@
+plugin rp-pppoe.so
+enp86s0.888
+user testing
+noauth
+defaultroute
+usepeerdns
+

@@ -1,0 +1,7 @@
+auth
+require-chap
+logfile /var/log/pppd.log
+ms-dns 8.8.8.8
+ms-dns 8.8.4.4
+ipv6 ,
+ipv6cp-use-persistent

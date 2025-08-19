@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# This script is run by the pppd after the link is established.
+# It uses run-parts to run scripts in /etc/ppp/ip-up.d, so to add routes,
+# set IP address, run the mailq etc. you should create script(s) there.
+#
+# Be aware that other packages may include /etc/ppp/ip-up.d scripts (named
+# after that package), so choose local script names with that in mind.
+#
+# This script is called with the following arguments:
+#    Arg  Name                          Example
+#    $1   Interface name                ppp0
+#    $2   The tty                       ttyS1
+#    $3   The link speed                38400
+#    $4   Local IP number               12.34.56.78
+#    $5   Peer  IP number               12.34.56.99
+#    $6   Optional ``ipparam'' value    foo
+
+# The environment is cleared before executing this script
+# so the path must be reset.
+PATH=/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin
+export PATH
+
+# These variables are for the use of the scripts run by run-parts
+PPP_IFACE="$1"
+PPP_TTY="$2"
+PPP_SPEED="$3"
+PPP_LOCAL="$4"
+PPP_REMOTE="$5"
+PPP_IPPARAM="$6"
+WLAN0_IP=`ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'`
+HE_REMOTE=216.218.221.6
+export PPP_IFACE PPP_TTY PPP_SPEED PPP_LOCAL PPP_REMOTE PPP_IPPARAM
+
+
+sysctl -w net.ipv4.conf.all.forwarding=1
+iptables -D POSTROUTING -t nat -s $PPP_LOCAL/24 -j MASQUERADE > /dev/null 2 >&1
+iptables -A POSTROUTING -t nat -s $PPP_LOCAL/24 -j MASQUERADE
+
+# modprobe ipv6
+# ip tunnel del he-ipv6
+# ip tunnel add he-ipv6 mode sit remote 216.218.221.6 local 192.168.2.10 ttl 255
+# # ip tunnel add he-ipv6 mode sit remote $HE_REMOTE local $WLAN_IP ttl 255
+# ip link set he-ipv6 up
+# # This must be marked for pppoe forwarding to wireless interface
+# # So, the pppoe interface must set to this IP address
+# # ip addr add 2001:470:18:209::2/64 dev he-ipv6
+# ip route add ::/0 dev he-ipv6
+# # ip -f inet6 addr
+# 
+# sysctl -w net.ipv6.conf.all.forwarding=1
+# 
+# # for LAN forwarding
+# ip -6 r add 2001:470:19:209::/64 dev $PPP_IFACE
+
+
