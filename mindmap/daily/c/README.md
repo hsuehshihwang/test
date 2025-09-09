@@ -17,5 +17,6 @@ markmap:
 # [attribute](attribute/index.html)
 ## [cleanup](attribute/cleanup/index.html)
 ### [sample](attribute/cleanup/sample/index.html)
+#### [files](attribute/cleanup/sample/files/index.html)
 ## [packed](attribute/packed/index.html)
 ### [sample](attribute/packed/sample/index.html)
