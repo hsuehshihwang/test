@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js"></script><script src="https://unpkg.com/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://unpkg.com/markmap-toolbar@0.18.12/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+              if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.classList.add("markmap-dark");
+              }
+            })(() => window.markmap,null,{"content":"","children":[{"content":"<a href=\"../index.html\">go back</a>","children":[],"payload":{"tag":"h1","lines":"8,9"}},{"content":"<a href=\"sample/index.html\">sample</a>","children":[{"content":"<a href=\"sample/e/index.html\">e</a>","children":[{"content":"<a href=\"sample/e/ea/index.html\">ea</a>","children":[{"content":"<a href=\"sample/e/ea/files/index.html\">files</a>","children":[],"payload":{"tag":"h4","lines":"12,13"}}],"payload":{"tag":"h3","lines":"11,12"}}],"payload":{"tag":"h2","lines":"10,11"}},{"content":"<a href=\"sample/c/index.html\">c</a>","children":[{"content":"<a href=\"sample/c/cb/index.html\">cb</a>","children":[],"payload":{"tag":"h3","lines":"14,15"}},{"content":"<a href=\"sample/c/ca/index.html\">ca</a>","children":[{"content":"<a href=\"sample/c/ca/cca/index.html\">cca</a>","children":[],"payload":{"tag":"h4","lines":"16,17"}},{"content":"<a href=\"sample/c/ca/ccb/index.html\">ccb</a>","children":[],"payload":{"tag":"h4","lines":"17,18"}}],"payload":{"tag":"h3","lines":"15,16"}},{"content":"<a href=\"sample/c/cc/index.html\">cc</a>","children":[{"content":"<a href=\"sample/c/cc/cca/index.html\">cca</a>","children":[],"payload":{"tag":"h4","lines":"19,20"}},{"content":"<a href=\"sample/c/cc/ccb/index.html\">ccb</a>","children":[],"payload":{"tag":"h4","lines":"20,21"}},{"content":"<a href=\"sample/c/cc/ccc/index.html\">ccc</a>","children":[],"payload":{"tag":"h4","lines":"21,22"}}],"payload":{"tag":"h3","lines":"18,19"}}],"payload":{"tag":"h2","lines":"13,14"}},{"content":"<a href=\"sample/d/index.html\">d</a>","children":[],"payload":{"tag":"h2","lines":"22,23"}},{"content":"<a href=\"sample/b/index.html\">b</a>","children":[{"content":"<a href=\"sample/b/bc/index.html\">bc</a>","children":[],"payload":{"tag":"h3","lines":"24,25"}},{"content":"<a href=\"sample/b/bb/index.html\">bb</a>","children":[{"content":"<a href=\"sample/b/bb/bba/index.html\">bba</a>","children":[],"payload":{"tag":"h4","lines":"26,27"}},{"content":"<a href=\"sample/b/bb/bbc/index.html\">bbc</a>","children":[],"payload":{"tag":"h4","lines":"27,28"}},{"content":"<a href=\"sample/b/bb/bbb/index.html\">bbb</a>","children":[],"payload":{"tag":"h4","lines":"28,29"}},{"content":"<a href=\"sample/b/bb/bbd/index.html\">bbd</a>","children":[],"payload":{"tag":"h4","lines":"29,30"}}],"payload":{"tag":"h3","lines":"25,26"}},{"content":"<a href=\"sample/b/ba/index.html\">ba</a>","children":[],"payload":{"tag":"h3","lines":"30,31"}}],"payload":{"tag":"h2","lines":"23,24"}},{"content":"<a href=\"sample/files/index.html\">files</a>","children":[],"payload":{"tag":"h2","lines":"31,32"}},{"content":"<a href=\"sample/a/index.html\">a</a>","children":[{"content":"<a href=\"sample/a/ac/index.html\">ac</a>","children":[],"payload":{"tag":"h3","lines":"33,34"}},{"content":"<a href=\"sample/a/ab/index.html\">ab</a>","children":[{"content":"<a href=\"sample/a/ab/abb/index.html\">abb</a>","children":[],"payload":{"tag":"h4","lines":"35,36"}},{"content":"<a href=\"sample/a/ab/aba/index.html\">aba</a>","children":[],"payload":{"tag":"h4","lines":"36,37"}},{"content":"<a href=\"sample/a/ab/abc/index.html\">abc</a>","children":[],"payload":{"tag":"h4","lines":"37,38"}}],"payload":{"tag":"h3","lines":"34,35"}},{"content":"<a href=\"sample/a/aa/index.html\">aa</a>","children":[{"content":"<a href=\"sample/a/aa/aaa/index.html\">aaa</a>","children":[],"payload":{"tag":"h4","lines":"39,40"}}],"payload":{"tag":"h3","lines":"38,39"}},{"content":"<a href=\"sample/a/files/index.html\">files</a>","children":[],"payload":{"tag":"h3","lines":"40,41"}}],"payload":{"tag":"h2","lines":"32,33"}}],"payload":{"tag":"h1","lines":"9,10"}}]},{"color":["blue"],"initialExpandLevel":4})</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js"></script><script src="https://unpkg.com/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://unpkg.com/markmap-toolbar@0.18.12/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+              if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.classList.add("markmap-dark");
+              }
+            })(() => window.markmap,null,{"content":"","children":[{"content":"<a href=\"../index.html\">go back</a>","children":[{"content":"<a href=\"e/ea/index.html\">ea</a>","children":[{"content":"<a href=\"e/ea/files/index.html\">files</a>","children":[],"payload":{"tag":"h3","lines":"10,11"}}],"payload":{"tag":"h2","lines":"9,10"}},{"content":"<a href=\"c/cb/index.html\">cb</a>","children":[],"payload":{"tag":"h2","lines":"11,12"}},{"content":"<a href=\"c/ca/index.html\">ca</a>","children":[{"content":"<a href=\"c/ca/cca/index.html\">cca</a>","children":[],"payload":{"tag":"h3","lines":"13,14"}},{"content":"<a href=\"c/ca/ccb/index.html\">ccb</a>","children":[],"payload":{"tag":"h3","lines":"14,15"}}],"payload":{"tag":"h2","lines":"12,13"}},{"content":"<a href=\"c/cc/index.html\">cc</a>","children":[{"content":"<a href=\"c/cc/cca/index.html\">cca</a>","children":[],"payload":{"tag":"h3","lines":"16,17"}},{"content":"<a href=\"c/cc/ccb/index.html\">ccb</a>","children":[],"payload":{"tag":"h3","lines":"17,18"}},{"content":"<a href=\"c/cc/ccc/index.html\">ccc</a>","children":[],"payload":{"tag":"h3","lines":"18,19"}}],"payload":{"tag":"h2","lines":"15,16"}},{"content":"<a href=\"b/bc/index.html\">bc</a>","children":[],"payload":{"tag":"h2","lines":"19,20"}},{"content":"<a href=\"b/bb/index.html\">bb</a>","children":[{"content":"<a href=\"b/bb/bba/index.html\">bba</a>","children":[],"payload":{"tag":"h3","lines":"21,22"}},{"content":"<a href=\"b/bb/bbc/index.html\">bbc</a>","children":[],"payload":{"tag":"h3","lines":"22,23"}},{"content":"<a href=\"b/bb/bbb/index.html\">bbb</a>","children":[],"payload":{"tag":"h3","lines":"23,24"}},{"content":"<a href=\"b/bb/bbd/index.html\">bbd</a>","children":[],"payload":{"tag":"h3","lines":"24,25"}}],"payload":{"tag":"h2","lines":"20,21"}},{"content":"<a href=\"b/ba/index.html\">ba</a>","children":[],"payload":{"tag":"h2","lines":"25,26"}}],"payload":{"tag":"h1","lines":"8,9"}},{"content":"<a href=\"files/index.html\">files</a>","children":[{"content":"<a href=\"a/ac/index.html\">ac</a>","children":[],"payload":{"tag":"h2","lines":"27,28"}},{"content":"<a href=\"a/ab/index.html\">ab</a>","children":[{"content":"<a href=\"a/ab/abb/index.html\">abb</a>","children":[],"payload":{"tag":"h3","lines":"29,30"}},{"content":"<a href=\"a/ab/aba/index.html\">aba</a>","children":[],"payload":{"tag":"h3","lines":"30,31"}},{"content":"<a href=\"a/ab/abc/index.html\">abc</a>","children":[],"payload":{"tag":"h3","lines":"31,32"}}],"payload":{"tag":"h2","lines":"28,29"}},{"content":"<a href=\"a/aa/index.html\">aa</a>","children":[{"content":"<a href=\"a/aa/aaa/index.html\">aaa</a>","children":[],"payload":{"tag":"h3","lines":"33,34"}}],"payload":{"tag":"h2","lines":"32,33"}},{"content":"<a href=\"a/files/index.html\">files</a>","children":[],"payload":{"tag":"h2","lines":"34,35"}}],"payload":{"tag":"h1","lines":"26,27"}}]},{"color":["blue"],"initialExpandLevel":4})</script>
+</body>
+</html>

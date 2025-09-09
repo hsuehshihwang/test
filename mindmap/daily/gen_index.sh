@@ -36,13 +36,13 @@ EOF
 
 currdir(){
   cd $1
+  gen
 # printf "%.*s|-> %s\n" "$depth" "$longspace" "$1"
   depth=$(( $depth + 1 ))
   local ds=$(find . -maxdepth 1 -type d ! -path "." ! -path "*.git*" | sed -e "s%^./%%" | sort)
 #  echo ds=$ds
   for son in $ds; do
-#   [ "$son" != "files" ] && currdir $son
-    [ "$son" != "files" ] && gen $son
+    [ "$son" != "files" ] && currdir $son
   done
   depth=$(( $depth - 1 ))
   cd ..
